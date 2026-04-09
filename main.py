@@ -54,10 +54,19 @@ Escolha uma opção: """))
             
 
         case 3: 
-            estatisticas.mostrar_estatisticas(lista_alunos)
+            print('\n='*40)
+            print("      - SISTEMA DE ALUNOS -  ")
+            print('=\n'*40)
+            
+            media_geral = estatisticas.media_da_turma(lista_alunos)
+            print(f"Média Geral da Turma: {media_geral}")
+            
+            melhor_aluno = estatisticas.melhor_aluno(media, lista_alunos)
+            print(f"O Melhor aluno da turma é: {melhor_aluno}")
+            
         
         case 4:
-            relatorio.gerar_excel(lista_alunos)
+            relatorio.criar_planilha(aprovados, reprovados, lista_alunos)
             
         case 0:
             print("\nSaindo...")
