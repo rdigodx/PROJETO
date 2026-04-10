@@ -11,7 +11,7 @@ def listar_alunos(lista_alunos):
               f"Idade:{cadastro['idade']}\n" 
               f"N1: {cadastro['n1']} | N2: {cadastro['n2']}\n"
               f"Média:{cadastro['media']:.2f}\n"
-              f"Situação:{cadastro['situacao']}\n")
+              f"Situação:{cadastro['status']}\n")
         
 def separar_alunos(lista_alunos):
     aprovados = []
@@ -20,5 +20,8 @@ def separar_alunos(lista_alunos):
     for cadastro in lista_alunos:
         if cadastro['status'] == "APROVADO":
             aprovados.append(cadastro)
-    return reprovados.append(cadastro)
+        else:
+            reprovados.append(cadastro)
+
+    return aprovados, reprovados
             

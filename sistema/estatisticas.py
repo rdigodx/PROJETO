@@ -1,7 +1,7 @@
 
 def media_da_turma(lista_alunos):
-    for notas in lista_alunos:
-        calculo_media = sum(notas) / len(notas)
+    for cadastro in lista_alunos:
+        calculo_media = sum(cadastro['notas']) / len(cadastro['notas'])
     return calculo_media
 
 

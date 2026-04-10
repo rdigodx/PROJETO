@@ -66,7 +66,10 @@ Escolha uma opção: """))
             
         
         case 4:
-            relatorio.criar_planilha(aprovados, reprovados, lista_alunos)
+         reprovados = organização.separar_alunos(lista_alunos)
+         aprovados = organização.separar_alunos(lista_alunos)
+         relatorio.criar_planilha("aprovados.xlsx", "90EE90", aprovados)
+         relatorio.criar_planilha("reprovados.xlsx", "FF7F7F", reprovados)
             
         case 0:
             print("\nSaindo...")
