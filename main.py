@@ -17,7 +17,7 @@ while True:
 0 - Sair
 Escolha uma opção: """))
     except ValueError:
-        print("\n[ERRO] Digite apenas números")
+        print("\n[ERRO] Digite apenas números\n")
         continue 
 
     match menu:
@@ -43,7 +43,7 @@ Escolha uma opção: """))
 
             if not validacão.validar_nota(nota1, nota2):
                 continue
-            
+
             media = processamento.calcular_media(nota1, nota2)
             status = processamento.classificar_aluno(media)
 
@@ -76,4 +76,4 @@ Escolha uma opção: """))
             break
         
         case _:
-            print("\n[AVISO] Opção inválida! Escolha entre 1 e 4 ou 0.")
+            print("\n[AVISO] Opção inválida! Escolha entre 1 e 4 ou 0.\n")
