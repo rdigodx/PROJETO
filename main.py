@@ -1,4 +1,4 @@
-from sistema import entrada, estatisticas, organização, processamento, relatorio, validacao
+from sistema import entrada, estatisticas, organizacao, processamento, relatorio, validacao
 
 lista_alunos = []
 
@@ -50,7 +50,7 @@ Escolha uma opção: """))
             processamento.cria_aluno(nome, data_nascimento, idade, nota1, nota2, media, status, lista_alunos)
 
         case 2:
-            organização.listar_alunos(lista_alunos)
+            organizacao.listar_alunos(lista_alunos)
             
 
         case 3: 
@@ -66,8 +66,8 @@ Escolha uma opção: """))
             
         
         case 4:
-         reprovados = organização.separar_alunos(lista_alunos)
-         aprovados = organização.separar_alunos(lista_alunos)
+         reprovados = organizacao.separar_alunos(lista_alunos)
+         aprovados = organizacao.separar_alunos(lista_alunos)
          relatorio.criar_planilha("aprovados.xlsx", "90EE90", aprovados)
          relatorio.criar_planilha("reprovados.xlsx", "FF7F7F", reprovados)
             
