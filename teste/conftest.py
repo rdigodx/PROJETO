@@ -1,1 +1,1 @@
-from sistema import entrada, estatisticas, organização, processamento, relatorio, validacão
+from sistema import entrada, estatisticas, organização, processamento, relatorio, validacao
