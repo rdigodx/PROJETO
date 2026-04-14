@@ -12,6 +12,7 @@ def listar_alunos(lista_alunos):
               f"N1: {cadastro['n1']} | N2: {cadastro['n2']}\n"
               f"Média:{cadastro['media']:.2f}\n"
               f"Situação:{cadastro['status']}\n")
+        print('-'*20)
         
 def separar_alunos(lista_alunos):
     aprovados = []

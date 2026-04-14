@@ -1,11 +1,12 @@
 from datetime import datetime
-import locale 
+import locale
+import re 
 
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 def validar_nome(aluno):
-    if not isinstance(aluno, str):
-        print("\nERRO: Nome do aluno deve ser uma string!\n")
+    if not aluno.replace(" ", "").isalpha():
+        print("\nERRO: Nome do aluno deve conter apenas letras!\n")
         return False
 
     if not aluno.strip():
@@ -14,7 +15,7 @@ def validar_nome(aluno):
     
     try:
         float(aluno)
-        print("\nERRO: O Nome do aluno não deve conter apenas números!\n")
+        print("\nERRO: O Nome do aluno não deve conter números!\n")
         return False
     except ValueError:
         return True
