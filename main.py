@@ -54,11 +54,11 @@ Escolha uma opção: """))
             
 
         case 3: 
-            print('\n='*40)
+            print('='*40)
             print("      - SISTEMA DE ALUNOS -  ")
-            print('=\n'*40)
+            print('='*40)
             
-            media_geral = estatisticas.media_da_turma(media, lista_alunos)
+            media_geral = estatisticas.media_da_turma(lista_alunos)
             print(f"Média Geral da Turma: {media_geral}")
             
             melhor_aluno = estatisticas.melhor_aluno(lista_alunos)
