@@ -1,4 +1,4 @@
-from sistema import entrada, estatisticas, organização, processamento, relatorio, validacão
+from sistema import entrada, estatisticas, organização, processamento, relatorio, validacao
 
 lista_alunos = []
 
@@ -24,12 +24,12 @@ Escolha uma opção: """))
         case 1:
             nome = entrada.obter_nome()
 
-            if not validacão.validar_nome(nome):
+            if not validacao.validar_nome(nome):
                 continue
             
             data_nascimento = entrada.obter_data_nascimento()
 
-            idade = validacão.validar_data_nascimento(data_nascimento)
+            idade = validacao.validar_data_nascimento(data_nascimento)
 
             if idade is None:
                 continue
@@ -41,7 +41,7 @@ Escolha uma opção: """))
                 continue
             
 
-            if not validacão.validar_nota(nota1, nota2):
+            if not validacao.validar_nota(nota1, nota2):
                 continue
 
             media = processamento.calcular_media(nota1, nota2)
