@@ -1,5 +1,6 @@
 from openpyxl import Workbook
 from openpyxl.styles import Font, Alignment, Border, Side, PatternFill
+from pathlib import Path
 
 
 def criar_planilha(nome_arquivo, cor, lista_alunos):
@@ -42,4 +43,10 @@ def criar_planilha(nome_arquivo, cor, lista_alunos):
     for col, largura in zip(colunas, larguras):
         planilha_ativa.column_dimensions[col].width = largura
 
-    planilha.save(nome_arquivo)
+    pasta_dados = Path(__file__).resolve().parent.parent / "dados"
+    pasta_dados.mkdir(exist_ok=True)
+
+    caminho_arquivo = pasta_dados / nome_arquivo
+    planilha.save(caminho_arquivo)
+
+    return str(Path("dados") / nome_arquivo)

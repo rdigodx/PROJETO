@@ -77,19 +77,19 @@ Escolha uma opção: """))
             arquivos_gerados = []
 
             if aprovados:
-                relatorio.criar_planilha("aprovados.xlsx", "90EE90", aprovados)
-                arquivos_gerados.append("aprovados.xlsx")
+                caminho_aprovados = relatorio.criar_planilha("aprovados.xlsx", "90EE90", aprovados)
+                arquivos_gerados.append(caminho_aprovados)
             else:
                 print("\nNenhum aluno aprovado. Relatório de aprovados não foi gerado.")
 
             if reprovados:
-                relatorio.criar_planilha("reprovados.xlsx", "FF7F7F", reprovados)
-                arquivos_gerados.append("reprovados.xlsx")
+                caminho_reprovados = relatorio.criar_planilha("reprovados.xlsx", "FF7F7F", reprovados)
+                arquivos_gerados.append(caminho_reprovados)
             else:
                 print("Nenhum aluno reprovado. Relatório de reprovados não foi gerado.")
 
             if arquivos_gerados:
-                print(f"\nRelatórios gerados com sucesso.\n")
+                print(f"\nRelatórios gerados com sucesso em: {', '.join(arquivos_gerados)}\n")
             
         case 0:
             print("\nSaindo...")
