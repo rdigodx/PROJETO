@@ -23,10 +23,6 @@ def validar_nome(aluno):
 
 
 def validar_nota(nota1,nota2):
-    if not nota1.strip() or not nota2.strip():
-        print("\nERRO: As notas não podem ser vazias!\n")
-        return False
-    
     if  (nota1 < 0 or nota1 > 10) or (nota2 < 0 or nota2 > 10):
         print("\nERRO: Notas devem ser entre 0 e 10!\n")
         return False
@@ -34,6 +30,10 @@ def validar_nota(nota1,nota2):
 
 
 def validar_data_nascimento(data_nascimento):
+    if not data_nascimento.strip():
+        print("\nERRO: Data de nascimento não pode ser vazia!\n")
+        return None
+    
     try:
         hoje = datetime.now()
         data_formatada = datetime.strptime(data_nascimento, "%d/%m/%Y")
@@ -42,10 +42,6 @@ def validar_data_nascimento(data_nascimento):
             idade -= 1
         if idade < 12 or idade > 18:
             print("\nERRO: Idade fora do intervalo permitido (12 a 18 anos)!\n")
-            return None
-        
-        if not data_nascimento.strip():
-            print("\nERRO: Data de nascimento não pode ser vazio!\n")
             return None
         
         return idade

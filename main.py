@@ -22,27 +22,26 @@ Escolha uma opção: """))
 
     match menu:
         case 1:
-            nome = entrada.obter_nome()
+            while True:
+                nome = entrada.obter_nome()
+                if validacao.validar_nome(nome):
+                    break
 
-            if not validacao.validar_nome(nome):
-                continue
-            
-            data_nascimento = entrada.obter_data_nascimento()
+            while True:
+                data_nascimento = entrada.obter_data_nascimento()
+                idade = validacao.validar_data_nascimento(data_nascimento)
+                if idade is not None:
+                    break
 
-            idade = validacao.validar_data_nascimento(data_nascimento)
+            while True:
+                try:
+                    nota1, nota2 = entrada.obter_nota()
+                except ValueError:
+                    print("\n[ERRO] Notas devem ser números.\n")
+                    continue
 
-            if idade is None:
-                continue
-
-            try:
-                nota1, nota2 = entrada.obter_nota()
-            except ValueError:
-                print("\n[ERRO] Notas devem ser números.\n")
-                continue
-            
-
-            if not validacao.validar_nota(nota1, nota2):
-                continue
+                if validacao.validar_nota(nota1, nota2):
+                    break
 
             media = processamento.calcular_media(nota1, nota2)
             status = processamento.classificar_aluno(media)
