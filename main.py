@@ -50,22 +50,30 @@ Escolha uma opção: """))
             processamento.cria_aluno(nome, data_nascimento, idade, nota1, nota2, media, status, lista_alunos)
 
         case 2:
+            if not lista_alunos:
+                print("\nNão foi cadastrado nenhum aluno!\n")
+                continue
+            
             organizacao.listar_alunos(lista_alunos)
             
 
         case 3: 
             print('='*40)
-            print("      - SISTEMA DE ALUNOS -  ")
+            print("      - ESTATÍSTICAS -  ")
             print('='*40)
+
+            if not lista_alunos:
+                print("\nNão há alunos cadastrados para mostrar estatísticas.\n")
+                continue
             
             media_geral = estatisticas.media_da_turma(lista_alunos)
-            print(f"Média Geral da Turma: {media_geral:.2f}\n")
+            print(f"\nMédia Geral da Turma: {media_geral:.2f}\n")
             
             nome_melhor, media_melhor = estatisticas.melhor_aluno(lista_alunos)
             if nome_melhor is None:
                 print("Nenhum aluno cadastrado para calcular o melhor da turma.")
             else:
-                print(f"O Melhor aluno da turma é: {nome_melhor} ({media_melhor:.2f})")
+                print(f"O Melhor aluno da turma é: {nome_melhor} ({media_melhor:.2f})\n")
             
         
         case 4:
