@@ -59,17 +59,37 @@ Escolha uma opção: """))
             print('='*40)
             
             media_geral = estatisticas.media_da_turma(lista_alunos)
-            print(f"Média Geral da Turma: {media_geral}")
+            print(f"Média Geral da Turma: {media_geral:.2f}\n")
             
-            melhor_aluno = estatisticas.melhor_aluno(lista_alunos)
-            print(f"O Melhor aluno da turma é: {melhor_aluno}")
+            nome_melhor, media_melhor = estatisticas.melhor_aluno(lista_alunos)
+            if nome_melhor is None:
+                print("Nenhum aluno cadastrado para calcular o melhor da turma.")
+            else:
+                print(f"O Melhor aluno da turma é: {nome_melhor} ({media_melhor:.2f})")
             
         
         case 4:
-         reprovados = organizacao.separar_alunos(lista_alunos)
-         aprovados = organizacao.separar_alunos(lista_alunos)
-         relatorio.criar_planilha("aprovados.xlsx", "90EE90", aprovados)
-         relatorio.criar_planilha("reprovados.xlsx", "FF7F7F", reprovados)
+            if not lista_alunos:
+                print("\nNão há alunos cadastrados para gerar relatórios.\n")
+                continue
+
+            aprovados, reprovados = organizacao.separar_alunos(lista_alunos)
+            arquivos_gerados = []
+
+            if aprovados:
+                relatorio.criar_planilha("aprovados.xlsx", "90EE90", aprovados)
+                arquivos_gerados.append("aprovados.xlsx")
+            else:
+                print("\nNenhum aluno aprovado. Relatório de aprovados não foi gerado.")
+
+            if reprovados:
+                relatorio.criar_planilha("reprovados.xlsx", "FF7F7F", reprovados)
+                arquivos_gerados.append("reprovados.xlsx")
+            else:
+                print("Nenhum aluno reprovado. Relatório de reprovados não foi gerado.")
+
+            if arquivos_gerados:
+                print(f"\nRelatórios gerados com sucesso.\n")
             
         case 0:
             print("\nSaindo...")

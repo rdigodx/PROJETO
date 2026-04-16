@@ -2,9 +2,9 @@ def listar_alunos(lista_alunos):
     if not lista_alunos:
         print("\nNão foi cadastrado nenhum aluno!\n")
         return
-    print('\n-'*20)
-    print("-LISTA DE ALUNOS -")
-    print('-'*20)
+    print('-'*40)
+    print("         -LISTA DE ALUNOS -")
+    print('-'*40)
     for cadastro in lista_alunos:
         print(f"Aluno: {cadastro['aluno']}\n"
               f"Data de nascimento:{cadastro['data_nascimento']}\n"
@@ -12,8 +12,8 @@ def listar_alunos(lista_alunos):
               f"N1: {cadastro['n1']} | N2: {cadastro['n2']}\n"
               f"Média:{cadastro['media']:.2f}\n"
               f"Situação:{cadastro['status']}\n")
-        print('-'*20)
-        
+        print('-'*40)
+
 def separar_alunos(lista_alunos):
     aprovados = []
     reprovados = []
