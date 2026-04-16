@@ -1,3 +1,10 @@
+def total_de_alunos(lista_alunos):
+    if not lista_alunos:
+        return 0
+    
+    return len(lista_alunos)
+
+
 def media_da_turma(lista_alunos):
     if not lista_alunos:
         return 0

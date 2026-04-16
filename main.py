@@ -66,6 +66,15 @@ Escolha uma opção: """))
                 print("\nNão há alunos cadastrados para mostrar estatísticas.\n")
                 continue
             
+            total_alunos = estatisticas.total_de_alunos(lista_alunos)
+            print(f"\nTotal de alunos cadastrados: {total_alunos}\n")
+            
+            quantidade_aprovados = organizacao.separar_alunos(lista_alunos)[0]
+            print(f"Quantidade de alunos aprovados: {quantidade_aprovados}\n")
+            
+            quantidade_reprovados = organizacao.separar_alunos(lista_alunos)[1]
+            print(f"Quantidade de alunos reprovados: {quantidade_reprovados}\n")
+            
             media_geral = estatisticas.media_da_turma(lista_alunos)
             print(f"\nMédia Geral da Turma: {media_geral:.2f}\n")
             
