@@ -1,1 +1,37 @@
-from sistema import entrada, estatisticas, organizacao, processamento, relatorio, validacao
+from datetime import date
+
+import pytest
+
+
+@pytest.fixture
+def lista_alunos_exemplo():
+    return [
+        {
+            "aluno": "ANA",
+            "data_nascimento": "10/10/2010",
+            "idade": 15,
+            "n1": 8.0,
+            "n2": 9.0,
+            "media": 8.5,
+            "status": "APROVADO",
+        },
+        {
+            "aluno": "BRUNO",
+            "data_nascimento": "05/04/2011",
+            "idade": 15,
+            "n1": 5.0,
+            "n2": 6.0,
+            "media": 5.5,
+            "status": "REPROVADO",
+        },
+        {
+            "aluno": "CARLA",
+            "data_nascimento": "22/11/2009",
+            "idade": 16,
+            "n1": 9.5,
+            "n2": 8.5,
+            "media": 9.0,
+            "status": "APROVADO",
+        },
+    ]
+
