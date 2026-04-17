@@ -46,8 +46,3 @@ def lista_alunos_exemplo():
             "status": "APROVADO",
         },
     ]
-
-
-@pytest.fixture
-def lista_alunos_exemplo_valor_none():
-    return [0]
