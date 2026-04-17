@@ -7,11 +7,11 @@ def listar_alunos(lista_alunos):
     print('-'*40)
     for cadastro in lista_alunos:
         print(f"Aluno: {cadastro['aluno']}\n"
-              f"Data de nascimento:{cadastro['data_nascimento']}\n"
-              f"Idade:{cadastro['idade']}\n" 
-              f"N1: {cadastro['n1']} | N2: {cadastro['n2']}\n"
-              f"Média:{cadastro['media']:.2f}\n"
-              f"Situação:{cadastro['status']}\n")
+            f"Data de nascimento:{cadastro['data_nascimento']}\n"
+            f"Idade:{cadastro['idade']}\n" 
+            f"N1: {cadastro['n1']} | N2: {cadastro['n2']}\n"
+            f"Média:{cadastro['media']:.2f}\n"
+            f"Situação:{cadastro['status']}\n")
         print('-'*40)
 
 def separar_alunos(lista_alunos):

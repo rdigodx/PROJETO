@@ -5,8 +5,17 @@ def test_calcular_media_da_turma(lista_alunos_exemplo):
     media = estatisticas.media_da_turma(lista_alunos_exemplo)
     assert media == (8.5 + 5.5 + 9.0) / 3
 
+def test_calcular_media_valor_none(lista_alunos_exemplo_valor_none):
+    media = estatisticas.media_da_turma(lista_alunos_exemplo_valor_none)
+    assert media == (8.5 + 5.5 + 9.0) / 3
+
 
 def test_obter_melhor_aluno(lista_alunos_exemplo):
     nome, media = estatisticas.melhor_aluno(lista_alunos_exemplo)
+    assert nome == "CARLA"
+    assert media == 9.0
+
+def test_obter_melhor_aluno(lista_alunos_exemplo_valor_none):
+    nome, media = estatisticas.melhor_aluno(lista_alunos_exemplo_valor_none)
     assert nome == "CARLA"
     assert media == 9.0

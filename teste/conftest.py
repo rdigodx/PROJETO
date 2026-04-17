@@ -2,6 +2,18 @@ from datetime import date
 
 import pytest
 
+def _data_nascimento_para_idade(anos):
+    hoje = date.today()
+    try:
+        nascimento = hoje.replace(year=hoje.year - anos)
+    except ValueError:
+        nascimento = hoje.replace(month=2, day=28, year=hoje.year - anos)
+    return nascimento.strftime("%d/%m/%Y")
+
+
+@pytest.fixture
+def data_nascimento_para_idade():
+    return _data_nascimento_para_idade
 
 @pytest.fixture
 def lista_alunos_exemplo():
@@ -35,3 +47,7 @@ def lista_alunos_exemplo():
         },
     ]
 
+
+@pytest.fixture
+def lista_alunos_exemplo_valor_none():
+    return [0]
