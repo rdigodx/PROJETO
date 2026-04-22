@@ -68,10 +68,11 @@ Escolha uma opção: """))
             total_alunos = estatisticas.total_de_alunos(lista_alunos)
             print(f"\nTotal de alunos cadastrados: {total_alunos}\n")
             
-            quantidade_aprovados = organizacao.separar_alunos(lista_alunos)[0]
+            aprovados, reprovados = organizacao.separar_alunos(lista_alunos)
+            quantidade_aprovados = len(aprovados)
             print(f"Quantidade de alunos aprovados: {quantidade_aprovados}\n")
             
-            quantidade_reprovados = organizacao.separar_alunos(lista_alunos)[1]
+            quantidade_reprovados = len(reprovados)
             print(f"Quantidade de alunos reprovados: {quantidade_reprovados}\n")
             
             media_geral = estatisticas.media_da_turma(lista_alunos)
